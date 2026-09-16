@@ -860,7 +860,29 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 2rem;
   }
+
+  .footer-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .footer-contact {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-contact a {
+    font-size: 0.78rem;
+    color: var(--mid);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-contact a:hover { color: var(--accent); }
 
   .footer-logo {
     font-family: var(--serif);
@@ -1057,6 +1079,186 @@
     padding-bottom: 1.5rem;
   }
 
+  /* PATIENT EDUCATION */
+  #education {
+    background: var(--warm-white);
+    border-top: 1px solid var(--rule);
+  }
+
+  .edu-intro { max-width: 640px; margin-bottom: 2.5rem; }
+  .edu-intro p { font-size: 0.92rem; color: var(--mid); line-height: 1.8; }
+
+  .edu-cards { display: flex; flex-direction: column; gap: 1rem; }
+
+  .edu-card {
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    overflow: hidden;
+    background: var(--cream);
+  }
+
+  .edu-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.75rem 2rem;
+    cursor: pointer;
+    gap: 1.5rem;
+    transition: background 0.2s;
+  }
+
+  .edu-card-header:hover { background: white; }
+  .edu-card-meta { display: flex; flex-direction: column; gap: 0.35rem; }
+
+  .edu-tag {
+    font-size: 0.65rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .edu-card-title {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--charcoal);
+    line-height: 1.3;
+  }
+
+  .edu-card-sub { font-size: 0.82rem; color: var(--mid); line-height: 1.6; margin: 0; }
+
+  .edu-icon {
+    font-size: 1.4rem;
+    color: var(--accent);
+    font-weight: 300;
+    flex-shrink: 0;
+    transition: transform 0.3s;
+  }
+
+  .edu-card.open .edu-icon { transform: rotate(45deg); }
+
+  .edu-card-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+
+  .edu-card.open .edu-card-body { max-height: 6000px; }
+
+  .edu-article { padding: 0 2rem 2rem; border-top: 1px solid var(--rule); }
+
+  .edu-article h4 {
+    font-family: var(--serif);
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--charcoal);
+    margin: 1.5rem 0 0.5rem;
+  }
+
+  .edu-article p { font-size: 0.88rem; color: var(--mid); line-height: 1.8; margin-bottom: 0.5rem; }
+
+  /* FAQ */
+  #faq {
+    background: var(--warm-white);
+    border-top: 1px solid var(--rule);
+  }
+
+  .faq-body {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+
+  .faq-group-title {
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    padding: 1.25rem 0;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    margin-bottom: 0;
+  }
+
+  .faq-group-title:hover { color: var(--accent); }
+
+  .faq-group-icon {
+    font-size: 1.2rem;
+    color: var(--accent);
+    transition: transform 0.3s;
+    font-weight: 300;
+    flex-shrink: 0;
+  }
+
+  .faq-group.open .faq-group-icon { transform: rotate(45deg); }
+
+  .faq-group .faq-list {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+
+  .faq-group.open .faq-list { max-height: 5000px; }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 1.25rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    text-align: left;
+    gap: 1rem;
+  }
+
+  .faq-question-text {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--charcoal);
+    line-height: 1.4;
+  }
+
+  .faq-icon {
+    font-size: 1.2rem;
+    color: var(--accent);
+    min-width: 1.2rem;
+    transition: transform 0.3s;
+    font-style: normal;
+  }
+
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+  .faq-answer {
+    font-size: 0.88rem;
+    color: var(--mid);
+    line-height: 1.8;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    padding: 0;
+  }
+
+  .faq-item.open .faq-answer {
+    max-height: 600px;
+    padding-bottom: 1.25rem;
+  }
+
   /* REVIEWS */
   #reviews {
     background: var(--accent-light);
@@ -1177,6 +1379,8 @@
       padding: 2rem 1.25rem;
       text-align: center;
     }
+    .footer-left { align-items: center; }
+    .footer-contact { justify-content: center; }
     .footer-links { justify-content: center; flex-wrap: wrap; gap: 1.25rem; }
   }
 
@@ -1200,7 +1404,9 @@
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
+    <li><a href="#education">Patient Education</a></li>
     <li><a href="#philosophy">Approach</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="#reviews">Reviews</a></li>
     <li><a href="#media">Media</a></li>
     <li><a href="#publications">Publications</a></li>
@@ -1216,7 +1422,9 @@
 <div class="mobile-nav" id="mobileNav">
   <a href="#about" class="mobile-nav-link">About</a>
   <a href="#services" class="mobile-nav-link">Services</a>
+  <a href="#education" class="mobile-nav-link">Patient Education</a>
   <a href="#philosophy" class="mobile-nav-link">Approach</a>
+  <a href="#faq" class="mobile-nav-link">FAQ</a>
   <a href="#reviews" class="mobile-nav-link">Reviews</a>
   <a href="#media" class="mobile-nav-link">Media</a>
   <a href="#publications" class="mobile-nav-link">Publications</a>
@@ -1244,8 +1452,8 @@
         <span class="stat-label">Patients</span>
       </div>
       <div class="stat">
-        <span class="stat-num">3</span>
-        <span class="stat-label">Specialist Areas</span>
+        <span class="stat-num">4</span>
+        <span class="stat-label">Surgical Specialties</span>
       </div>
     </div>
   </div>
@@ -1266,7 +1474,7 @@
   </div>
   <div class="about-grid">
     <div class="about-text">
-      <p>A/Prof David Littlejohn is one of Australia's most experienced and respected oncoplastic breast surgeons, with over 26 years of subspecialist practice spanning Sydney and regional New South Wales. Trained at the Prince of Wales Hospital, Randwick, he went on to refine his oncoplastic skills in the United Kingdom under Mr Rainsbury — a founding pioneer of the discipline — before returning to Australia in 2000 to build a practice that has since become a benchmark for the field.</p>
+      <p>A/Prof David Littlejohn is one of Australia's most experienced and respected oncoplastic breast surgeons, with over 26 years of subspecialist practice spanning Sydney and regional New South Wales. Trained at the Prince of Wales Hospital, Randwick, he went on to refine his oncoplastic skills in the United Kingdom under Dr R. Rainsbury — a founding pioneer of the discipline — before returning to Australia in 2000 to build a practice that has since become a benchmark for the field.</p>
       <p>Consulting across Sydney and at the Wagga Wagga Specialist Medical Centre, A/Prof Littlejohn is renowned for his technical precision and patient-centred approach. His practice is among the few in Australia to offer neoadjuvant chemotherapy and radiotherapy — treating the cancer first to reduce tumour size before surgery — resulting in significantly better cosmetic and surgical outcomes for patients.</p>
       <p>A leader in education and research, A/Prof Littlejohn is a founding member of Breast Surgeons NSW and BreastSurgANZ, and served as past Vice President of the Breast Surgical Society of Australia and New Zealand. He pioneered oncoplastic cadaveric surgical courses across Australia and New Zealand, convening the inaugural Level 2 Cadaver workshop in Brisbane in 2014. He is a sought-after speaker at national and international conferences, and a lecturer for the Sydney University Graduate Certificate in Breast Cancer Surgery.</p>
       <p>Beyond breast surgery, A/Prof Littlejohn holds specialist expertise in endocrine and laparoscopic surgery. As a member of the International Society of Endocrine Surgeons, he has published on minimally invasive parathyroid surgery and the application of 4DCT imaging, and carries extensive experience in the diagnosis and management of breast implant-related complications.</p>
@@ -1275,31 +1483,35 @@
     <div class="about-qualifications">
       <div class="qual-item">
         <div class="qual-degree">MBBS</div>
-        <div class="qual-institution">University of New South Wales</div>
+        <div class="qual-institution">University of New South Wales · 1990</div>
       </div>
       <div class="qual-item">
         <div class="qual-degree">FRACS — Fellow of the Royal Australasian College of Surgeons</div>
-        <div class="qual-institution">Prince of Wales Hospital, Randwick</div>
+        <div class="qual-institution">Prince of Wales Hospital, Randwick · 1998</div>
       </div>
       <div class="qual-item">
         <div class="qual-degree">Oncoplastic Training</div>
-        <div class="qual-institution">United Kingdom — under Mr Rainsbury · 1999–2000</div>
+        <div class="qual-institution">United Kingdom — under Dr R. Rainsbury · 1999–2000</div>
       </div>
       <div class="qual-item">
         <div class="qual-degree">Senior Lecturer</div>
-        <div class="qual-institution">University of Sydney · UNSW · Charles Sturt University</div>
+        <div class="qual-institution">University of Sydney · UNSW · Charles Sturt University · 2002–Present</div>
       </div>
       <div class="qual-item">
-        <div class="qual-degree">Founding Chairman, Oncoplastic Group</div>
-        <div class="qual-institution">BreastSurgANZ</div>
+        <div class="qual-degree">Founding Member & Past Vice President</div>
+        <div class="qual-institution">Breast Surgical Society of Australia and New Zealand · 2010</div>
       </div>
       <div class="qual-item">
-        <div class="qual-degree">Past Vice President</div>
-        <div class="qual-institution">Breast Surgical Society of Australia and New Zealand</div>
+        <div class="qual-degree">Chair, BreastSurgANZ Oncoplastic Committee</div>
+        <div class="qual-institution">BreastSurgANZ · 2010–2014</div>
       </div>
       <div class="qual-item">
-        <div class="qual-degree">Founding Member</div>
-        <div class="qual-institution">Breast Surgeons NSW · BreastSurgANZ</div>
+        <div class="qual-degree">Secretary and Treasurer</div>
+        <div class="qual-institution">BreastSurgANZ · 2014–2017</div>
+      </div>
+      <div class="qual-item">
+        <div class="qual-degree">Founding Member & Vice President</div>
+        <div class="qual-institution">BreastSurgANZ · 2017–2019</div>
       </div>
       <div class="qual-item">
         <div class="qual-degree">Member</div>
@@ -1339,6 +1551,92 @@
   </div>
 </section>
 
+<!-- PATIENT EDUCATION -->
+<section id="education">
+  <div class="section-header">
+    <span class="section-label">Patient Education</span>
+    <h2 class="section-title">Understanding your<br>breast health</h2>
+  </div>
+  <div class="edu-intro">
+    <p>A/Prof Littlejohn is committed to keeping his patients informed. The following articles are written to help you understand breast implant health, complications, and the importance of regular screening.</p>
+  </div>
+  <div class="edu-cards">
+
+    <div class="edu-card">
+      <div class="edu-card-header" onclick="toggleEdu(this)">
+        <div class="edu-card-meta">
+          <span class="edu-tag">Breast Implants</span>
+          <h3 class="edu-card-title">Breast Implant Complications & Surveillance</h3>
+          <p class="edu-card-sub">What complications can occur, what symptoms to watch for, and how often your implants should be checked.</p>
+        </div>
+        <span class="edu-icon">+</span>
+      </div>
+      <div class="edu-card-body">
+        <div class="edu-article">
+
+          <h4>How is a dedicated implant check different to standard breast screening?</h4>
+          <p>If you have implants, your breasts need to be assessed differently. A dedicated implant check looks for both implant complications and suspicious changes that could be related to breast cancer. Your clinician will assess the position of your implants, how mobile the breast tissue is over the implant, and whether there are any clinical signs of complications such as rupture or capsular formation. When implants become hard, it often signals a complication — this is frequently accompanied by pain and symptoms resembling a flu-like illness, including muscle aches, fatigue, and general tiredness. These non-specific symptoms can indicate a general inflammatory response related to the implant.</p>
+
+          <h4>What complications can arise, and what are the signs to look out for?</h4>
+          <p>All implants will wear out eventually — much like tyres, some last longer than others depending on the stresses they are put under. Complications that can occur include rupture or gel bleed, which causes pain and gradual breast deformity as an inflammatory reaction hardens the implant. Roughly 30% of implants will have ruptured by 10 years, and by 20 years most will have ruptured to some degree.</p>
+          <p>Some implants develop painful capsular contracture from the time of insertion. This may be due to a foreign body reaction by the immune system or a low-grade infection introduced at the time of surgery. Signs and symptoms to watch for include: a flu-like illness causing fatigue, muscle aches, and tiredness — especially when combined with pain in one or both implants — and visible deformity or hardness of the breast.</p>
+
+          <h4>What types of imaging do women with implants need?</h4>
+          <p>Imaging needs to be tailored on a case-by-case basis. Ultrasound can assess implant integrity and the overlying breast tissue, and is often suitable for patients with no symptoms of complications. However, ultrasound alone is not adequate for patients over 40 or those at higher risk of breast cancer. Depending on your individual circumstances, contrast-enhanced mammography, tomographic mammography with extra views, or breast MRI may be recommended. An experienced radiographer is essential — not only to minimise any risk to the implant, but to ensure adequate assessment of the breast tissue.</p>
+
+          <h4>How often should implants be checked?</h4>
+          <p>At a minimum, a breast ultrasound every one to two years is recommended — particularly for patients with polyurethane or coarse-textured implants. If symptoms develop such as pain, deformity, fatigue, or muscle aches, a breast assessment should be arranged promptly. When complications are left unattended, silicone can spread beyond the immediate area of the implant into surrounding breast tissue, muscle, and lymph nodes — making surgery significantly more complex.</p>
+
+          <h4>What symptoms should I watch for?</h4>
+          <p>Problem implants can cause symptoms similar to a persistent flu-like illness — fatigue, tiredness, and muscle aches and pains. The affected breast may become tender, swollen, and heavy with a dragging sensation. Over time, hardness develops and the shape of the breast changes, eventually becoming significantly deformed if left untreated.</p>
+
+          <h4>Why is it important to fix leaking implants promptly?</h4>
+          <p>A leak will only worsen over time, leading to increased pain, greater breast deformity, and ultimately a more complex surgical procedure to repair. If silicone spreads to the lymph nodes in the armpit, swelling and pain will develop in that area as well. As a general rule, the longer a leaking implant is left untreated, the more extensive the surgery required to fix it.</p>
+
+          <h4>About BIA-ALCL</h4>
+          <p>ALCL (anaplastic large cell lymphoma) is a rare complication associated with certain implants. A breast ultrasound checking for nodules or fluid collecting around the implant can be the first sign of this developing. At minimum, patients with higher-risk implants should have an ultrasound every two years. The most at-risk implants — polyurethane implants, with a risk of approximately 1 in 3,000 — are no longer used. Coarse-textured implants carry a risk of approximately 1 in 50,000, and smooth implants are not thought to develop ALCL.</p>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="edu-card">
+      <div class="edu-card-header" onclick="toggleEdu(this)">
+        <div class="edu-card-meta">
+          <span class="edu-tag">Breast Cancer Screening</span>
+          <h3 class="edu-card-title">Breast Cancer Screening with Implants</h3>
+          <p class="edu-card-sub">Why screening is different when you have implants, what it involves, and why regular checks remain essential.</p>
+        </div>
+        <span class="edu-icon">+</span>
+      </div>
+      <div class="edu-card-body">
+        <div class="edu-article">
+
+          <h4>Why does having implants make breast cancer harder to detect?</h4>
+          <p>Every woman having breast implants should have breast imaging performed prior to surgery — it would be tragic if a cancer or precancerous lesion were present before the implant was inserted. Unfortunately not all women are offered preoperative screening despite its benefits. While implants can sometimes make it easier to feel a lump clinically (because breast tissue spreads over a smooth surface), detecting precancerous change before it becomes palpable requires specialised imaging techniques tailored to each patient. It is therefore important to have your screening at a practice experienced in breast cancer detection with implants present.</p>
+
+          <h4>Are breast implants a risk factor for breast cancer?</h4>
+          <p>No. Implants are not a risk factor for developing breast cancer. Some implants carry a risk of BIA-ALCL (anaplastic large cell lymphoma), which is a different condition entirely — not a breast cancer, but a rare immune system cancer. The highest risk implants are polyurethane (approximately 1 in 3,000), followed by coarse-textured (approximately 1 in 10,000) and fine-textured (approximately 1 in 80,000). Smooth implants are not thought to carry any risk of ALCL.</p>
+
+          <h4>What does breast cancer screening involve if I have implants?</h4>
+          <p>Screening is tailored to the individual patient. Factors considered include the type of implant, whether it is positioned under or in front of the muscle, how mobile the breast tissue is over the implant, and whether there are any signs of implant complication. Based on this assessment, A/Prof Littlejohn may recommend breast ultrasound, contrast-enhanced mammography, tomographic mammography with additional views, or breast MRI with contrast.</p>
+
+          <h4>Can mammograms damage implants?</h4>
+          <p>Some patients have reported that their implant became sore or began to deform following a mammogram, and attributed this to the squashing involved. While it is very difficult to blame a single event for implant failure — since all implants eventually fail — A/Prof Littlejohn believes it is important to have an experienced radiographer perform your mammogram. They will obtain better views of the breast tissue while taking good care of the implant. Experience absolutely matters in this setting.</p>
+
+          <h4>Why is regular screening still important when you have implants?</h4>
+          <p>Every woman has a risk of breast cancer — it is the most common cancer in women. Some patients are reluctant to attend screening out of fear of implant damage, but attending a dedicated practice with staff skilled in screening women with implants makes this risk extremely low. Early diagnosis remains the most effective way of reducing your risk of dying from breast cancer, and regular screening is the most effective means of achieving an early diagnosis.</p>
+
+          <h4>What if I have breast cancer and implants — can I keep them?</h4>
+          <p>Managing breast cancer when implants are present can be more challenging. If breast-conserving surgery is performed, radiotherapy to the breast is often required, which can cause complications with the implant — though options exist to mitigate this risk. If a mastectomy is required, implant-based reconstruction may still be an option. In some cases, flap-based reconstruction — using tissue moved from another part of the body — may be the most appropriate approach. A/Prof Littlejohn will guide you through all available options as part of your multidisciplinary care plan.</p>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- PHILOSOPHY -->
 <section id="philosophy">
   <div class="section-header">
@@ -1351,29 +1649,93 @@
       <div class="pillar">
         <span class="pillar-num">01</span>
         <div class="pillar-content">
-          <h4>Listen First</h4>
-          <p>Every consultation begins with truly hearing the patient — their symptoms, their concerns, and their goals. A correct diagnosis follows from careful listening.</p>
+          <h4>Patient-Centred Care</h4>
+          <p>Every patient deserves a thorough, unhurried consultation. A/Prof Littlejohn takes the time to understand each patient's individual circumstances, concerns, and goals before recommending a course of treatment.</p>
         </div>
       </div>
       <div class="pillar">
         <span class="pillar-num">02</span>
         <div class="pillar-content">
-          <h4>Evidence-Based Practice</h4>
-          <p>Treatment recommendations are grounded in the best available clinical evidence, combined with sound clinical judgement and individual patient context.</p>
+          <h4>Evidence-Based Innovation</h4>
+          <p>A/Prof Littlejohn remains at the forefront of his field, regularly presenting at international conferences and contributing to clinical research. His patients benefit from the latest techniques and most current evidence in oncoplastic and endocrine surgery.</p>
         </div>
       </div>
       <div class="pillar">
         <span class="pillar-num">03</span>
         <div class="pillar-content">
-          <h4>Seamless, Coordinated Care</h4>
-          <p>A/Prof Littlejohn works with a dedicated multidisciplinary team to ensure a seamless progression from diagnosis through to treatment and reconstruction — with continuity and quality at every stage.</p>
+          <h4>Seamless Multidisciplinary Care</h4>
+          <p>From first consultation through to surgery, reconstruction, and follow-up, A/Prof Littlejohn works with a dedicated multidisciplinary team to ensure every patient experiences a coordinated, seamless pathway of care.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- REVIEWS -->
+<!-- FAQ -->
+<section id="faq">
+  <div class="section-header">
+    <span class="section-label">FAQ</span>
+    <h2 class="section-title">Frequently asked<br>questions</h2>
+  </div>
+  <div class="faq-body">
+
+    <div class="faq-group">
+      <h3 class="faq-group-title" onclick="toggleGroup(this)">Breast Surgery<span class="faq-group-icon">+</span></h3>
+      <div class="faq-list">
+        <div class="faq-item"><button class="faq-question"><span class="faq-question-text">What is oncoplastic breast surgery?</span><i class="faq-icon">+</i></button><div class="faq-answer">Oncoplastic breast surgery combines cancer removal with plastic surgery techniques to achieve the best possible cosmetic outcome at the same time as treating the cancer. Rather than simply removing the tumour and leaving the breast misshapen, oncoplastic techniques reshape and reconstruct the breast during the same operation. A/Prof Littlejohn is one of Australia's leading oncoplastic surgeons, with over 26 years of subspecialist experience in these advanced techniques.</div></div>
+        <div class="faq-item"><button class="faq-question"><span class="faq-question-text">What is the difference between a lumpectomy and a mastectomy?</span><i class="faq-icon">+</i></button><div class="faq-answer">A lumpectomy (also called a wide local excision) removes only the tumour and a small margin of surrounding tissue, preserving the majority of the breast. A mastectomy removes the entire breast. The choice between the two depends on the size and location of the tumour, the patient's breast size, genetics, and personal preference. A/Prof Littlejohn will discuss both options thoroughly and help you make the decision that is right for your situation.</div></div>
+        <div class="faq-item"><button class="faq-question"><span class="faq-question-text">How long is recovery after breast surgery?</span><i class="faq-icon">+</i></button><div class="faq-answer">Recovery time varies depending on the type of surgery performed. After a lumpectomy, most patients return to light activities within one to two weeks. Mastectomy and reconstruction procedures typically require two to six weeks of recovery. A/Prof Littlejohn and his team will provide you with personalised recovery guidelines before your surgery, and ongoing support throughout your rehabilitation.</div></div>
+        <div class="faq-item"><button class="faq-question"><span class="faq-question-text">Will I need chemotherapy or radiotherapy before surgery?</span><i class="faq-icon">+</i></button><div class="faq-answer">In some cases, A/Prof Littlejohn recommends neoadjuvant therapy — chemotherapy or radiotherapy given before surgery — to shrink the tumour first. This approach can make surgery less extensive, improve cosmetic outcomes, and in some cases allow a lumpectomy where a mastectomy would otherwise have been required. His practice is one of the few in Australia to routinely offer this approach, and each treatment plan is tailored to the individual patient following discussion with the multidisciplinary team.</div></div>
+      </div>
+    </div>
+
+    <div class="faq-group">
+      <h3 class="faq-group-title" onclick="toggleGroup(this)">Breast Implant Revision Surgery<span class="faq-group-icon">+</span></h3>
+      <div class="faq-list">
+        <div class="faq-item"><button class="faq-question"><span class="faq-question-text">What is breast implant revision surgery?</span><i class="faq-icon">+</i></button><div class="faq-answer">Breast implant revision surgery refers to any procedure that modifies, replaces, or removes existing breast implants. This may be performed for medical reasons such as implant rupture, capsular contracture, or breast implant illness, or for cosmetic reasons such as changing implant size or addressing asymmetry. A/Prof Littlejohn has extensive experience in all forms of implant revision surgery and will discuss the most appropriate approach during your consultation.</div></div>
+        <div class="faq-item"><button class="faq-question"><span class="faq-question-text">Why might someone need implant revision surgery?</span><i class="faq-icon">+</i></button><div class="faq-answer">There are many reasons a patient may require implant revision surgery, including implant rupture or leakage, capsular contracture, implant malposition, changes in breast shape over time, concerns about breast implant illness, or simply a desire to change implant size or type. A/Prof Littlejohn will conduct a thorough assessment to determine the most appropriate surgical plan for your individual circumstances.</div></div>
+        <div class="faq-item"><button class="faq-question"><span class="faq-question-text">What is the difference between implant revision and implant removal?</span><i class="faq-icon">+</i></button><div class="faq-answer">Implant removal refers specifically to taking the implants out without replacing them, sometimes called "explantation." Implant revision is a broader term that includes removal, replacement with new implants, or any other corrective procedure. Some patients choose to have their implants removed without replacement, while others prefer to have new implants inserted at the same time. A/Prof Littlejohn will help you understand your options and determine the approach that best suits your health and personal goals.</div></div>
+        <div class="faq-item"><button class="faq-question"><span class="faq-question-text">Can implants be replaced during revision surgery?</span><i class="faq-icon">+</i></button><div class="faq-answer">Yes, in many cases implants can be replaced with new implants at the same time as removal, depending on the patient's health, the condition of the surrounding tissue, and the reason for revision. In some situations — particularly where there are signs of infection or breast implant illness — a staged approach may be recommended, with replacement performed at a later date once the body has had time to recover.</div></div>
+        <div class="faq-item"><button class="faq-question"><span class="faq-question-text">How do I know if I need revision surgery?</span><i class="faq-icon">+</i></button><div class="faq-answer">Signs that you may need implant revision surgery include changes in the shape, size, or feel of your breast, hardening around the implant, pain or discomfort, visible rippling or implant movement, or systemic symptoms that you suspect may be related to your implants. If you have concerns about your breast implants, the first step is a consultation with A/Prof Littlejohn, who will arrange appropriate imaging and assessment to determine whether revision surgery is recommended.</div></div>
+      </div>
+    </div>
+
+    <div class="faq-group">
+      <h3 class="faq-group-title" onclick="toggleGroup(this)">En Bloc Removal &amp; Capsulectomy<span class="faq-group-icon">+</span></h3>
+      <div class="faq-list">
+        <div class="faq-item"><button class="faq-question"><span class="faq-question-text">What is en bloc implant removal?</span><i class="faq-icon">+</i></button><div class="faq-answer">En bloc implant removal is a surgical technique in which the breast implant and its surrounding scar tissue capsule are removed together as a single intact unit, without opening or disturbing the capsule during the procedure. This approach is considered important in cases where the implant has ruptured, where there is concern about silicone leakage, or where the patient has symptoms of breast implant illness.</div></div>
+        <div class="faq-item"><button class="faq-question"><span class="faq-question-text">What is an en bloc capsulectomy?</span><i class="faq-icon">+</i></button><div class="faq-answer">An en bloc capsulectomy is a surgical procedure in which the breast implant and its surrounding fibrous capsule are removed together as one intact specimen. This technique is considered the gold standard in cases of ruptured implants or suspected breast implant illness, as it minimises the risk of leaving behind potentially problematic tissue or silicone material.</div></div>
+        <div class="faq-item"><button class="faq-question"><span class="faq-question-text">How is en bloc removal different from standard implant removal?</span><i class="faq-icon">+</i></button><div class="faq-answer">In a standard implant removal, the implant is taken out and the capsule may be left in place or removed separately. En bloc removal removes both the implant and the entire capsule in one piece without breaking the capsule open. This is a more complex procedure requiring specialist surgical skill, but it is preferred in certain clinical situations to minimise the risk of silicone contamination of surrounding tissue.</div></div>
+        <div class="faq-item"><button class="faq-question"><span class="faq-question-text">Why is it important to remove the capsule with the implant?</span><i class="faq-icon">+</i></button><div class="faq-answer">The capsule that forms around a breast implant is scar tissue created by the body in response to the implant. In some cases this capsule may contain silicone particles, biofilm, or inflammatory cells that are thought to contribute to implant-related symptoms. Removing the capsule along with the implant helps ensure that all potentially affected tissue is cleared from the body.</div></div>
+        <div class="faq-item"><button class="faq-question"><span class="faq-question-text">Am I a candidate for en bloc removal?</span><i class="faq-icon">+</i></button><div class="faq-answer">You may be a candidate for en bloc removal if you have a ruptured implant, symptoms of breast implant illness, capsular contracture, or concerns about the long-term effects of your implants. Not all patients require en bloc removal — the appropriate technique depends on your individual clinical situation. A/Prof Littlejohn will review your imaging, symptoms, and medical history to determine the best surgical approach for you.</div></div>
+        <div class="faq-item"><button class="faq-question"><span class="faq-question-text">What is the recovery like after en bloc capsulectomy?</span><i class="faq-icon">+</i></button><div class="faq-answer">Recovery after en bloc capsulectomy typically takes two to four weeks. Most patients spend one night in hospital and are able to return to light activities within a week or two. Drains may be used for the first few days to remove any fluid build-up. A/Prof Littlejohn and his team will provide detailed post-operative instructions and follow-up appointments throughout your recovery.</div></div>
+        <div class="faq-item"><button class="faq-question"><span class="faq-question-text">Is en bloc capsulectomy covered by private health insurance?</span><i class="faq-icon">+</i></button><div class="faq-answer">Coverage depends on your individual private health insurance policy and the clinical indication for surgery. In many cases where there is a medical reason — such as implant rupture, capsular contracture, or BIA-ALCL — a portion of the costs may be covered by Medicare and private health insurance. A/Prof Littlejohn's rooms will provide a detailed cost estimate prior to your procedure.</div></div>
+      </div>
+    </div>
+
+    <div class="faq-group">
+      <h3 class="faq-group-title" onclick="toggleGroup(this)">Laparoscopic Surgery<span class="faq-group-icon">+</span></h3>
+      <div class="faq-list">
+        <div class="faq-item"><button class="faq-question"><span class="faq-question-text">What is laparoscopic surgery?</span><i class="faq-icon">+</i></button><div class="faq-answer">Laparoscopic surgery, sometimes called keyhole surgery, is a minimally invasive surgical technique in which small incisions are made in the abdomen and a tiny camera (laparoscope) is inserted to allow the surgeon to see inside the body on a screen. Surgical instruments are passed through additional small incisions to perform the procedure. A/Prof Littlejohn uses laparoscopic techniques across a range of abdominal and endocrine procedures, offering patients a less invasive alternative to traditional open surgery.</div></div>
+        <div class="faq-item"><button class="faq-question"><span class="faq-question-text">What are the benefits of laparoscopic surgery over open surgery?</span><i class="faq-icon">+</i></button><div class="faq-answer">Laparoscopic surgery offers several significant advantages over traditional open surgery, including smaller incisions, less post-operative pain, reduced risk of infection, shorter hospital stays, faster return to normal activities, and minimal scarring. Because the procedure is less traumatic to the body, patients generally experience a smoother and quicker recovery. A/Prof Littlejohn will advise whether a laparoscopic approach is suitable for your individual procedure and circumstances.</div></div>
+        <div class="faq-item"><button class="faq-question"><span class="faq-question-text">Am I a suitable candidate for laparoscopic surgery?</span><i class="faq-icon">+</i></button><div class="faq-answer">Most patients are suitable candidates for laparoscopic surgery, however suitability depends on the type of procedure required, the patient's overall health, body habitus, and any previous abdominal surgeries. In some cases, factors such as extensive scar tissue from prior operations may make a laparoscopic approach more complex. A/Prof Littlejohn will assess your individual situation during your consultation and recommend the most appropriate surgical approach for you.</div></div>
+        <div class="faq-item"><button class="faq-question"><span class="faq-question-text">How long is recovery after laparoscopic surgery?</span><i class="faq-icon">+</i></button><div class="faq-answer">Recovery after laparoscopic surgery is generally much faster than after open surgery. Most patients are able to return home the same day or after one night in hospital, and can resume light activities within a few days to one week. Return to full normal activity, including work and exercise, is typically achieved within two to four weeks depending on the procedure performed. A/Prof Littlejohn's team will provide you with personalised post-operative guidelines before your surgery.</div></div>
+        <div class="faq-item"><button class="faq-question"><span class="faq-question-text">Is laparoscopic surgery safe?</span><i class="faq-icon">+</i></button><div class="faq-answer">Laparoscopic surgery is widely regarded as safe and is performed routinely by specialist surgeons worldwide. As with any surgical procedure, there are potential risks including bleeding, infection, and anaesthetic complications, however these are generally lower than with open surgery due to the smaller incisions involved. In rare cases it may be necessary to convert to open surgery during the procedure if unexpected findings are encountered. A/Prof Littlejohn will discuss all risks and benefits with you in detail prior to your procedure.</div></div>
+      </div>
+    </div>
+
+    <div class="faq-group">
+      <h3 class="faq-group-title" onclick="toggleGroup(this)">Endocrine Surgery<span class="faq-group-icon">+</span></h3>
+      <div class="faq-list">
+        <div class="faq-item"><button class="faq-question"><span class="faq-question-text">What conditions does A/Prof Littlejohn treat for the thyroid?</span><i class="faq-icon">+</i></button><div class="faq-answer">A/Prof Littlejohn treats a wide range of thyroid conditions including thyroid nodules, goitre (enlarged thyroid), hyperthyroidism, thyroid cancer, and Graves' disease. He uses surgeon-directed ultrasound to assist in diagnosis and surgical planning, and performs both total and partial thyroidectomy depending on the nature of the condition.</div></div>
+        <div class="faq-item"><button class="faq-question"><span class="faq-question-text">What is minimally invasive parathyroid surgery?</span><i class="faq-icon">+</i></button><div class="faq-answer">Minimally invasive parathyroid surgery is a targeted surgical technique to remove one or more overactive parathyroid glands, which cause hyperparathyroidism. It uses preoperative imaging — including 4DCT scans — to precisely locate the affected gland before surgery, resulting in a smaller incision, shorter operating time, and faster recovery. A/Prof Littlejohn has published research on this technique and is highly experienced in its application.</div></div>
+        <div class="faq-item"><button class="faq-question"><span class="faq-question-text">How long is recovery after thyroid surgery?</span><i class="faq-icon">+</i></button><div class="faq-answer">Most patients recover from thyroid surgery within one to two weeks. The procedure is typically performed under general anaesthetic and requires an overnight stay. Some patients may require thyroid hormone replacement medication following surgery, which A/Prof Littlejohn will discuss as part of your treatment plan. Full recovery is usually achieved within two to four weeks.</div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <section id="reviews">
   <div class="section-header">
     <span class="section-label">Reviews</span>
@@ -1600,6 +1962,7 @@
           <div class="location-address">Suite 12, 325 Edward Street<br>Wagga Wagga NSW 2650<br>Australia</div>
           <div class="location-links">
             <a href="https://maps.app.goo.gl/hUtt3YKp46pHjkX17" target="_blank" rel="noopener" class="location-dir">Driving directions →</a>
+            <a href="https://www.wwsmc.com.au" target="_blank" rel="noopener" class="location-dir">Visit website →</a>
           </div>
         </div>
       </div>
@@ -1623,8 +1986,14 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">A/Prof David Littlejohn</div>
-  <p class="footer-note">© 2026 Dr David Littlejohn. All rights reserved.</p>
+  <div class="footer-left">
+    <div class="footer-logo">A/Prof David Littlejohn</div>
+    <div class="footer-contact">
+      <a href="tel:0269211770">(02) 6921 1770</a>
+      <a href="mailto:office@littlejohns.com.au">office@littlejohns.com.au</a>
+    </div>
+  </div>
+  <p class="footer-note">© <span id="footer-year"></span> A/Prof David Littlejohn. All rights reserved.</p>
   <ul class="footer-links">
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
@@ -1647,6 +2016,16 @@
     }, 3000);
   }
 
+  function toggleEdu(el) {
+    const card = el.parentElement;
+    card.classList.toggle('open');
+  }
+
+  function toggleGroup(el) {
+    const group = el.parentElement;
+    group.classList.toggle('open');
+  }
+
   document.querySelectorAll('.faq-question').forEach(btn => {
     btn.addEventListener('click', () => {
       const item = btn.parentElement;
@@ -1655,6 +2034,8 @@
       if (!isOpen) item.classList.add('open');
     });
   });
+
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
 
   const hamburger = document.getElementById('hamburger');
   const mobileNav = document.getElementById('mobileNav');
