@@ -2003,77 +2003,71 @@
 </footer>
 
 <script>
-  function handleSubmit(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('.form-submit');
-    btn.textContent = 'Enquiry Sent ✓';
-    btn.style.background = '#2a6e4a';
-    btn.disabled = true;
-    setTimeout(() => {
-      btn.textContent = 'Send Enquiry';
-      btn.style.background = '';
-      btn.disabled = false;
-      e.target.reset();
-    }, 3000);
-  }
-
-  function toggleEdu(el) {
-    const card = el.closest('.edu-card');
-    card.classList.toggle('open');
-  }
-
-  function toggleGroup(el) {
-    const group = el.closest('.faq-group');
-    group.classList.toggle('open');
-  }
-
-  // Patient Education cards
-  document.querySelectorAll('.edu-card-header').forEach(header => {
+  // Patient Education expandable cards
+  document.querySelectorAll('.edu-card-header').forEach(function(header) {
     header.addEventListener('click', function() {
-      const card = this.closest('.edu-card');
-      card.classList.toggle('open');
+      var card = header.closest('.edu-card');
+      if (card.classList.contains('open')) {
+        card.classList.remove('open');
+      } else {
+        card.classList.add('open');
+      }
     });
   });
 
   // FAQ group subheadings
-  document.querySelectorAll('.faq-group-title').forEach(title => {
+  document.querySelectorAll('.faq-group-title').forEach(function(title) {
+    title.style.cursor = 'pointer';
     title.addEventListener('click', function() {
-      const group = this.closest('.faq-group');
-      group.classList.toggle('open');
+      var group = title.closest('.faq-group');
+      if (group.classList.contains('open')) {
+        group.classList.remove('open');
+      } else {
+        group.classList.add('open');
+      }
     });
   });
 
-  document.querySelectorAll('.faq-question').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const item = btn.parentElement;
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-      if (!isOpen) item.classList.add('open');
+  // FAQ individual questions
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var item = btn.closest('.faq-item');
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i) {
+        i.classList.remove('open');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+      }
     });
   });
 
-  document.getElementById('footer-year').textContent = new Date().getFullYear();
+  // Footer year
+  var yearEl = document.getElementById('footer-year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  const hamburger = document.getElementById('hamburger');
-  const mobileNav = document.getElementById('mobileNav');
-
-  hamburger.addEventListener('click', () => {
-    mobileNav.classList.toggle('open');
-  });
-
-  document.querySelectorAll('.mobile-nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileNav.classList.remove('open');
+  // Mobile hamburger menu
+  var hamburger = document.getElementById('hamburger');
+  var mobileNav = document.getElementById('mobileNav');
+  if (hamburger && mobileNav) {
+    hamburger.addEventListener('click', function() {
+      mobileNav.classList.toggle('open');
     });
-  });
+    document.querySelectorAll('.mobile-nav-link').forEach(function(link) {
+      link.addEventListener('click', function() {
+        mobileNav.classList.remove('open');
+      });
+    });
+  }
 
-  const navLinks = document.querySelectorAll('.nav-links a, .nav-cta, .btn-primary, .btn-ghost, .footer-links a');
-  navLinks.forEach(link => {
+  // Smooth scroll
+  document.querySelectorAll('.nav-links a, .nav-cta, .btn-primary, .btn-ghost, .footer-links a').forEach(function(link) {
     link.addEventListener('click', function(e) {
-      const href = this.getAttribute('href');
+      var href = link.getAttribute('href');
       if (href && href.startsWith('#') && href.length > 1) {
         e.preventDefault();
-        document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+        var target = document.querySelector(href);
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
       }
     });
   });
