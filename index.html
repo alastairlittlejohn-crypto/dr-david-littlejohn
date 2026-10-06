@@ -1015,8 +1015,9 @@
 
     /* MEDIA */
     .media-grid { grid-template-columns: 1fr; }
+  }
 
-    /* FAQ */
+  /* FAQ */
   #faq {
     background: var(--warm-white);
     border-top: 1px solid var(--rule);
@@ -1378,7 +1379,8 @@
     .reviews-dial { width: 100%; display: flex; justify-content: center; }
   }
 
-  /* PUBLICATIONS */
+  /* MOBILE: PUBLICATIONS, CONTACT, FOOTER */
+  @media (max-width: 900px) {
     .pub-body { grid-template-columns: 1fr; gap: 3rem; }
 
     /* CONTACT */
